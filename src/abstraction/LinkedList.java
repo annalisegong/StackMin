@@ -109,36 +109,6 @@ public abstract class LinkedList
 		return this.count;
 	}
 	
-	protected void selectionSort()
-	{
-		Node currNode = new Node(this.head.getData());
-		Node i = currNode;
-		while(i != this.tail.getNextNode())
-		{
-			this.head = i;
-			Node j = i.getNextNode();
-			while(j != null)
-			{
-				if(j.getData() < this.head.getData())
-				{
-					this.head = j;
-				}
-				int temp = j.getData();
-				j.setData(this.head.getData());
-				this.head.setData(temp);
-				
-				j = j.getNextNode();	
-			}
-			i = currNode.getNextNode();
-		}
-	}
-	
-	protected int min()
-	{
-		this.selectionSort();
-		return this.head.getData();
-	}
-	
 	@Override
 	public String toString()
 	{
